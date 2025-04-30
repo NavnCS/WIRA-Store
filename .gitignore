@@ -1,0 +1,24 @@
+# Frontend
+/frontend/wira-frontend/node_modules
+/frontend/wira-frontend/dist
+/frontend/wira-frontend/.vite
+/frontend/wira-frontend/.env
+/frontend/wira-frontend/.env.local
+/frontend/wira-frontend/.env.production
+
+# Backend
+/backend/wira-backend/bin
+/backend/wira-backend/.env
+
+# General
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
