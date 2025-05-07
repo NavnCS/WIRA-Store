@@ -1,17 +1,17 @@
 package main
 
 import (
-  "github.com/gin-gonic/gin"
+	"wira-backend/database"
+	"wira-backend/routes"
+
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
-  r := gin.Default()
-  
-  r.GET("/health", func(c *gin.Context) {
-    c.JSON(200, gin.H{
-      "status": "OK",
-    })
-  })
+	database.Connect()
 
-  r.Run(":8080")
+	app := fiber.New()
+	routes.Setup(app)
+
+	app.Listen(":3000")
 }

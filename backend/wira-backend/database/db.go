@@ -2,8 +2,7 @@ package database
 
 import (
 	"fmt"
-	"os"
-
+	"log"
 	"wira-backend/models"
 
 	"gorm.io/driver/postgres"
@@ -13,18 +12,14 @@ import (
 var DB *gorm.DB
 
 func Connect() {
-	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable",
-		os.Getenv("DB_HOST"),
-		os.Getenv("DB_USER"),
-		os.Getenv("DB_PASSWORD"),
-		os.Getenv("DB_NAME"),
-		os.Getenv("DB_PORT"))
-
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	dsn := "host=localhost user=postgres password=yourpassword dbname=wira_nft_store port=5432 sslmode=disable"
+	var err error
+	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
-		panic("Failed to connect to DB")
+		log.Fatal("Failed to connect to database:", err)
 	}
+	fmt.Println("✅ Connected to PostgreSQL")
 
-	db.AutoMigrate(&models.NFT{})
-	DB = db
+	// Auto migrate tables
+	DB.AutoMigrate(&models.NFT{}, &models.User{}, &models.Transaction{})
 }

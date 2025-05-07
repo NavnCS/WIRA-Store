@@ -1,8 +1,10 @@
 package models
 
 type NFT struct {
-	ID          int    `json:"id"`
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	Owner       string `json:"owner"`
+	ID     uint   `json:"id" gorm:"primaryKey"`
+	Name   string `json:"name"`
+	Rarity string `json:"rarity"`
+	Image  string `json:"image"`
+	Price  int64  `json:"price"`
+	Owner  string `json:"owner"`
 }
