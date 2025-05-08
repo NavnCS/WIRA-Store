@@ -20,6 +20,5 @@ func Connect() {
 	}
 	fmt.Println("✅ Connected to PostgreSQL")
 
-	// Auto migrate tables
 	DB.AutoMigrate(&models.NFT{}, &models.User{}, &models.Transaction{})
 }

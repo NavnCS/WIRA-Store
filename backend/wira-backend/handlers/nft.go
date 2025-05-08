@@ -36,7 +36,6 @@ func ToggleFavorite(c *fiber.Ctx) error {
 	}
 
 	if input.Remove {
-		// remove favorite
 		newFavorites := []int{}
 		for _, id := range user.Favorites {
 			if id != input.NFTID {

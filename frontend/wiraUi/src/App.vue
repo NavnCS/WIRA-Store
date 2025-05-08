@@ -36,10 +36,10 @@ export default {
       selectedRarity: 'All',
       favorites: [],
       nfts: [
-        { id: 1, name: 'Crypto Dog', rarity: 'Common', image: '/nft-placeholder.png' },
-        { id: 2, name: 'Pixel Alien', rarity: 'Rare', image: '/nft-placeholder.png' },
-        { id: 3, name: 'Golden Robot', rarity: 'Legendary', image: '/nft-placeholder.png' },
-        { id: 4, name: 'Moon Cat', rarity: 'Common', image: '/nft-placeholder.png' },
+        { id: 1, name: 'Monster', rarity: 'Common', image: '/nft-placeholder.png' },
+        { id: 2, name: 'Heros', rarity: 'Rare', image: '/nft-placeholder.png' },
+        { id: 3, name: 'Animals', rarity: 'Legendary', image: '/nft-placeholder.png' },
+        { id: 4, name: 'Diamonds', rarity: 'Common', image: '/nft-placeholder.png' },
       ]
     }
   },
